@@ -1,0 +1,94 @@
+.vizual{
+   display: flex;
+   flex-direction: column; 
+}
+
+.h{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.vizual button{
+   margin: 10px;
+}
+
+.vizual button{
+   background: #fff;
+   width: 100px;height: 35px;
+   border: 2px solid #000;
+   border-radius: 10px;
+   color:#000;
+   font-weight: bold;
+   position: relative;
+   z-index: 5;
+   cursor: pointer;
+}
+
+.vizual button:before {
+   content: '';
+   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+   position: absolute;
+   top: -2px;
+   right:-2px;
+   background-size: 400%;
+   z-index: -1;
+   filter: blur(5px);
+   width: calc( 100% + 6px);
+   height: calc(100% + 6px);
+   animation: glowing 20s linear infinite;
+   opacity: 0;
+   transition: opacity .3s ease-in-out;
+   border-radius: 10px;
+   font-family: 'PT Serif', serif;
+   font-size: 3vh;
+}
+
+.vizual button:active {
+   color: #fff
+} 
+
+.vizual button:active:after {
+   background: transparent;
+}
+
+.vizual button:hover:before {
+   opacity: 1;
+}
+
+.vizual button:after {
+   z-index: -1;
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   left: 0;
+   top: 0;
+   border-radius: 10px;
+}
+
+@keyframes glowing {
+   0% { background-position: 0 0; }
+   50% { background-position: 400% 0; }
+   100% { background-position: 0 0; }
+}
+
+.val{
+   width: 15vw;
+   height: 3vh;
+   border-radius: 10px;
+   font-size: 20px;
+   display: flex;
+   align-items: center;
+}
+
+input::placeholder {
+   font-size: 15px;
+   opacity: 0.5;
+   color: red;
+}
+
+
+
+

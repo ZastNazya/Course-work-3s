@@ -1,0 +1,93 @@
+.Home{
+   height: 90vh;   
+   margin: 0;
+   /* display: flex; */
+}
+.video {
+   width: 100%;
+   height: 95%;
+   object-fit: cover;
+   position: absolute;
+   z-index: -1;
+   margin: 0;
+}
+
+.color{
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgb(0, 0, 0) 90%);
+   position: absolute;
+   top: 0;
+   z-index: 0;
+   height: 100vh;
+   width: 100%;
+}
+
+
+.Home button{
+   background: #000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 200px;
+   height: 200px;
+   border: 2px solid #ffff;
+   border-radius: 50%;
+   color:#fff;
+   font-weight: bold;
+   position: absolute;
+   top: 40vh;
+   right: 45vw;
+   z-index: 5;
+   cursor: pointer;
+}
+
+.Home button:before {
+   content: '';
+   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+   position: absolute;
+   top: -2px;
+   right:-2px;
+   background-size: 400%;
+   z-index: -1;
+   filter: blur(5px);
+   width: calc( 100% + 6px);
+   height: calc(100% + 6px);
+   animation: glowing 20s linear infinite;
+   opacity: 0;
+   transition: opacity .3s ease-in-out;
+   border-radius: 50%;
+   font-family: 'PT Serif', serif;
+   font-size: 3vh;
+}
+
+.Home button:active {
+   color: #000
+} 
+
+.Home button:active:after {
+   background: transparent;
+}
+
+.Home button:hover:before {
+   opacity: 1;
+}
+
+.Home button:after {
+   z-index: -1;
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: #111;
+   left: 0;
+   top: 0;
+   border-radius: 50%;
+}
+
+@keyframes glowing {
+   0% { background-position: 0 0; }
+   50% { background-position: 400% 0; }
+   100% { background-position: 0 0; }
+}
+
+
+
